@@ -1,0 +1,163 @@
+﻿<Window x:Class="BloupBloupCar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloupBloupCar"
+        mc:Ignorable="d"
+        Title="Bloup Bloup Car" Height="690" Width="1050"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="MainGridContent" Grid.Column="1" Grid.Row="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="600"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="800"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Left Side -->
+            <!-- Stating Button -->
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Right" VerticalAlignment="Center" Height="20">IP Address :</TextBlock>
+                    <TextBox x:Name="fIdAddress" Grid.Column="2" Grid.Row="0" Height="20"></TextBox>
+                </Grid>
+
+                <Button x:Name="fStart" Click="StartConnection" Grid.Column="2" Grid.Row="0">Connect and start engine</Button>
+            </Grid>
+            <!-- End Stating Button -->
+
+            <TextBlock Grid.Column="0" Grid.Row="2" Width="800" Height="600" Background="Black"></TextBlock>
+            <!-- End Left Side -->
+            
+            <!--Right Side-->
+            <Grid Grid.Column="2" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="135"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" FontSize="22" Height="35" TextAlignment="Center" VerticalAlignment="Center">Options :</TextBlock>
+
+                <!-- Video Format Option -->
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Height="20">Video format :</TextBlock>
+                    <ComboBox Grid.Column="0" Grid.Row="2" Height="24" VerticalAlignment="Center">
+                        <ComboBoxItem IsSelected="True">4:3</ComboBoxItem>
+                        <ComboBoxItem>16:9</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <!-- End Video Format Option -->
+
+                <!-- Light Option -->
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="fLightToggle" Click="ToggleLights" Grid.Column="0" Grid.Row="0">Lights</Button>
+                    <Image x:Name="lightImage" Grid.Column="2" Grid.Row="0" Source="Assets/Images/light_off.png" Stretch="Fill"></Image>
+                </Grid>
+                <!-- End Light Option -->
+
+                <!-- Sound Option -->
+                <Grid Grid.Row="6" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7">Sounds and Music :</TextBlock>
+
+                    <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="7">
+                        <ComboBoxItem IsSelected="True">Sample 1</ComboBoxItem>
+                        <ComboBoxItem>Sample 2</ComboBoxItem>
+                        <ComboBoxItem>Sample 3</ComboBoxItem>
+                    </ComboBox>
+
+                    <Button IsEnabled="False" x:Name="fPlayButton" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Height="30" VerticalAlignment="Center">Play</Button>
+                    <Button IsEnabled="False" x:Name="fPauseButton" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Center">Pause</Button>
+                    <Button IsEnabled="False" x:Name="fStopButton" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Center">Stop</Button>
+                </Grid>
+                <!-- End Sound Option -->
+            </Grid>
+            <!-- End Rigth Side -->
+        </Grid>
+    </Grid>
+</Window>
