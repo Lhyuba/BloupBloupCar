@@ -64,7 +64,9 @@
             </Grid>
             <!-- End Stating Button -->
 
-            <TextBlock Grid.Column="0" Grid.Row="2" Width="800" Height="600" Background="Black"></TextBlock>
+            <Grid x:Name="iVideoContainer" Grid.Column="0" Grid.Row="2">
+                <TextBlock Grid.Column="0" Grid.Row="2" Background="Black"></TextBlock>
+            </Grid>
             <!-- End Left Side -->
             
             <!--Right Side-->
@@ -99,9 +101,9 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Column="0" Grid.Row="0" Height="20">Video format :</TextBlock>
-                    <ComboBox Grid.Column="0" Grid.Row="2" Height="24" VerticalAlignment="Center">
-                        <ComboBoxItem IsSelected="True">4:3</ComboBoxItem>
-                        <ComboBoxItem>16:9</ComboBoxItem>
+                    <ComboBox Grid.Column="0" Grid.Row="2" Height="24" VerticalAlignment="Center" SelectedIndex="0">
+                        <ComboBoxItem Selected="ChangeResolution">4:3</ComboBoxItem>
+                        <ComboBoxItem Selected="ChangeResolution">16:9</ComboBoxItem>
                     </ComboBox>
                 </Grid>
                 <!-- End Video Format Option -->

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BloupBloupCar
 {
@@ -43,6 +33,25 @@ namespace BloupBloupCar
             {
                 lightImage.Source = new BitmapImage(new Uri(@"Assets\Images\light_on.png", UriKind.Relative));
                 lights = true;
+            }
+        }
+
+        private void ChangeResolution(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cbItem = sender as ComboBoxItem;
+            iVideoContainer.Width = 800;
+
+            switch (cbItem.Content.ToString())
+            {
+                case "16:9":
+                    iVideoContainer.Height = 450;
+                    break;
+
+                //case "16:10":
+                case "4:3":
+                default:
+                    iVideoContainer.Height = 600;
+                    break;
             }
         }
     }
