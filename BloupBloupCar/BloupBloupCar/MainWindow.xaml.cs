@@ -10,7 +10,7 @@ namespace BloupBloupCar
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static Boolean lights = false;
+        public static Boolean lightsOn = false;
 
         public MainWindow()
         {
@@ -24,15 +24,15 @@ namespace BloupBloupCar
 
         private void ToggleLights(object sender, RoutedEventArgs e)
         {
-            if (lights)
+            if (lightsOn)
             {
                 lightImage.Source = new BitmapImage(new Uri(@"Assets\Images\light_off.png", UriKind.Relative));
-                lights = false;
+                lightsOn = false;
             }
             else
             {
                 lightImage.Source = new BitmapImage(new Uri(@"Assets\Images\light_on.png", UriKind.Relative));
-                lights = true;
+                lightsOn = true;
             }
         }
 
